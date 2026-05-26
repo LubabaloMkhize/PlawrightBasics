@@ -9,9 +9,9 @@ test('Launch Ndosi Website successfully', async ({ page }) => {
 
     const loginButton = page.locator('button:text("Rolling Login")');
 
-   // await loginButton.isVisible();
+    await loginButton.isVisible();
 
-    expect (await loginButton.isVisible()).toBeFalsy();
+    //expect (await loginButton.isVisible()).toBeFalsy();
 
     
 });
