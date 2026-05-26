@@ -17,6 +17,13 @@ test('Login to Ndosi with valid credentials', async ({ page }) => {
 
     await expect(page.locator('text=Welcomeback,Chief👋')).toBeVisible();
 
+    await page.click('text=Menu');
+
+    await page.click('text=Logout');
+
+    await page.waitForTimeout(5000);
+
+
     
 });
 });
