@@ -1,7 +1,7 @@
 import test, { expect } from "@playwright/test";
 
 test.describe('Launch Ndosi Website', () => {
-test('Launch Ndosi Website successfully', async ({ page }) => {
+test('@smoke Launch Ndosi Website successfully', async ({ page }) => {
 
     await page.goto('https://ndosisimplifiedautomation.vercel.app/');
 
@@ -11,7 +11,7 @@ test('Launch Ndosi Website successfully', async ({ page }) => {
 
     await loginButton.isVisible();
 
-    //expect (await loginButton.isVisible()).toBeFalsy();
+    expect (await loginButton.isVisible()).toBeFalsy();
 
     
 });

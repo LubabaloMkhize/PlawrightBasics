@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Valid login', () => {
-test('Login to Ndosi with valid credentials', async ({ page }) => {
+test('@regression Login to Ndosi with valid credentials', async ({ page }) => {
 
     await page.goto('*/');
 
