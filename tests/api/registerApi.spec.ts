@@ -9,8 +9,8 @@ test('Registration API test', async ({ request }) => {
         firstName: 'John',
         lastName: 'Doe',
         email: `john${Date.now()}@example.com`,
-        password: 'SecurePass123',
-        confirmPassword: 'SecurePass123',
+        password: 'SecurePass@123',
+        confirmPassword: 'SecurePass@123',
         groupId: '5328c91e-fc40-11f0-8e00-5000e6331276'
       }
     }
@@ -22,5 +22,5 @@ test('Registration API test', async ({ request }) => {
 
   console.log('Response Body:', responseBody);
 
-  expect(responseBody.message).toBe('User registered successfully');
+  expect(responseBody.message).toBe('Registration submitted successfully. Your account is pending admin approval.');
 });
