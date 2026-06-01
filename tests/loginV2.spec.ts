@@ -27,6 +27,9 @@ test("Successful login",{tag : ['@regression','@sanity'],}, async ({ page }) => 
 
     await page.getByRole('heading', { name: 'Login to Access Learning Materials'}).isVisible();
 
+    const element = await page.locator('#login-email');
+    await element.screenshot({ path: 'Screenshots/login-email_field.png' });
+
     await page.locator('#login-email').fill('Tatalo.Mkhize@example.com');
 
     await page.locator('#login-password').fill('England@123456');

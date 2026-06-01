@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Valid login', () => {
-test('@regression Login to Ndosi with valid credentials', async ({ page }) => {
+test('@regression Login to Ndosi with valid credentials', async ({ page },testInfo) => {
 
     await page.goto('*/');
 
@@ -15,7 +15,13 @@ test('@regression Login to Ndosi with valid credentials', async ({ page }) => {
 
     await page.click('button[name="loginSubmit"]');
 
+    await page.waitForTimeout(5000);
+
     await expect(page.locator('text=Welcomeback,Chief👋')).toBeVisible();
+
+    await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
+
+    await testInfo.attach('screenshot', {path: 'Screenshots/LandingPage.png',contentType: 'image/png',});
 
     await page.click('text=Menu');
 
