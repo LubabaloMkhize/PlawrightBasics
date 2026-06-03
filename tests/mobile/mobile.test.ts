@@ -1,9 +1,6 @@
 import {test,devices,expect} from '@playwright/test';
 
-  test.use({
-    ...devices['iPhone 14 Pro'],
-    
-  });
+  test.use({...devices['iPhone 14 Pro'],});
 
   test('mobile web test', async ({ page }) => {
     await page.goto('*/');

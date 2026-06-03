@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 test.describe('Valid login', () => {
-test('@regression Login to Ndosi with valid credentials', async ({ page },testInfo) => {
+test('@regression Login to Ndosi with valid admin credentials', async ({ page },testInfo) => {
 
     await page.goto('*/');
 
@@ -17,7 +17,7 @@ test('@regression Login to Ndosi with valid credentials', async ({ page },testIn
 
     await page.waitForTimeout(5000);
 
-    await expect(page.locator('text=Welcomeback,Chief👋')).toBeVisible();
+    await expect(page.locator('text=Welcomeback,Tatalo👋')).toBeVisible();
 
     await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
 
@@ -29,8 +29,36 @@ test('@regression Login to Ndosi with valid credentials', async ({ page },testIn
 
     await page.waitForTimeout(5000);
 
+});
 
+test('@regression Login to Ndosi with valid standard user credentials', async ({ page },testInfo) => {
+
+    await page.goto('*/');
+
+    await expect(page).toHaveTitle('Ndosi Test Automation');
     
+    await page.click('text=Login');
+
+    await page.fill('input[name="loginEmail"]', 'Tatalo.Mkhize@example.com');
+
+    await page.fill('input[name="loginPassword"]', 'England@123456');
+
+    await page.click('button[name="loginSubmit"]');
+
+    await page.waitForTimeout(5000);
+
+    await expect(page.locator('text=Welcomeback,Tatalo👋')).toBeVisible();
+
+    await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
+
+    await testInfo.attach('screenshot', {path: 'Screenshots/LandingPage.png',contentType: 'image/png',});
+
+    await page.click('text=Menu');
+
+    await page.click('text=Logout');
+
+    await page.waitForTimeout(5000);
+
 });
 });
 
@@ -58,6 +86,7 @@ test('Login to Ndosi with invalid password', async ({ page }) => {
 
     // Accept alert
     await dialog.accept();
+
     console.log("Message coming from the dialog: "+ dialog.message());
 });
 
@@ -104,7 +133,7 @@ test('Login to Ndosi with invalid credentials', async ({ page }) => {
     const dialog = await dialogPromise;
 
     // Assert alert message
-        expect(dialog.message()).toBe('Invalid credentials. Please try again.');
+    expect(dialog.message()).toBe('Invalid credentials. Please try again.');
 
     // Accept alert
     await dialog.accept();

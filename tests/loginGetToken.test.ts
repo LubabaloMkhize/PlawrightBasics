@@ -15,7 +15,7 @@ test('@regression Login to Ndosi with valid credentials', async ({ page }) => {
 
     await page.click('button[name="loginSubmit"]');
 
-    await expect(page.locator('text=Welcomeback,Chief👋')).toBeVisible();
+    await expect(page.locator('text=Welcomeback,Tatalo👋')).toBeVisible();
 
     const authToken = await page.evaluate(() => {
     return localStorage.getItem('authToken');
