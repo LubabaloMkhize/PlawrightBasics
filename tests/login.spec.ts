@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.describe('Valid login', () => {
 test('@regression Login to Ndosi with valid admin credentials', async ({ page },testInfo) => {
 
-    await page.goto('*/');
+    await page.goto('/');
 
     await expect(page).toHaveTitle('Ndosi Test Automation');
     
@@ -17,7 +17,7 @@ test('@regression Login to Ndosi with valid admin credentials', async ({ page },
 
     await page.waitForTimeout(5000);
 
-    await expect(page.locator('text=Welcomeback,Tatalo👋')).toBeVisible();
+    await expect(page.locator('text=Welcomeback,Sponge👋')).toBeVisible();
 
     await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
 
@@ -33,7 +33,7 @@ test('@regression Login to Ndosi with valid admin credentials', async ({ page },
 
 test('@regression Login to Ndosi with valid standard user credentials', async ({ page },testInfo) => {
 
-    await page.goto('*/');
+    await page.goto('/');
 
     await expect(page).toHaveTitle('Ndosi Test Automation');
     
@@ -47,7 +47,7 @@ test('@regression Login to Ndosi with valid standard user credentials', async ({
 
     await page.waitForTimeout(5000);
 
-    await expect(page.locator('text=Welcomeback,Tatalo👋')).toBeVisible();
+    await expect(page.locator('text=Welcomeback,Sponge👋')).toBeVisible();
 
     await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
 

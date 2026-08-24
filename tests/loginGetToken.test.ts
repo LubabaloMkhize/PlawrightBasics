@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.describe('Valid login', () => {
 test('@regression Login to Ndosi with valid credentials', async ({ page }) => {
 
-    await page.goto('*/');
+    await page.goto('/');
 
     await expect(page).toHaveTitle('Ndosi Test Automation');
     
