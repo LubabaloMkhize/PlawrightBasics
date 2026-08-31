@@ -23,7 +23,7 @@ test('Verify login button',async({page})=>{
 
     //const loginButton = page.locator('button.user-pill');
 
-    // const loginButton = await page.getByRole('button', { name: 'Login' });
+    //const loginButton = await page.getByRole('button', { name: 'Login' });
     
      
     //await loginbutton.isVisible();
@@ -35,7 +35,7 @@ test('Verify login button',async({page})=>{
 
 test('landing page screenshot',async({page})=>{
 
-    await page.goto('*/');
+    await page.goto('/');
 
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
 

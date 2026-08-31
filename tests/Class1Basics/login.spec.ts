@@ -5,7 +5,7 @@ test('Login to ndosi with valid credentials',async({page})=>{
     await page.goto('/');
 
     //await page.click('text=Login');
-    await page.getByRole('button', { name: 'Login' }).click();
+    await page.getByRole('button', { name: /Login/ }).click();
 
     //await page.getByPlaceholder('Email').fill('Tatalo.Mkhize@example.com');
     //await page.fill('input[name="loginEmail"]', 'Tatalo.Mkhize@example.com');
