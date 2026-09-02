@@ -22,13 +22,17 @@ test('Login to ndosi with valid credentials',async({page})=>{
     await expect(page.getByRole('heading', { name: /Welcome back, Sponge 👋/ })).toBeVisible();
     //await expect(page.locator('text=Welcomeback,Sponge👋')).toBeVisible();
 
-    await page.click('text=Menu');
+    //await page.click('text=Menu');
+
+    await page.getByRole('button', { name: 'Menu' }).click();
 
     await page.getByRole('button', { name: 'My Profile' }).click();
 
     await page.getByRole('button', { name: 'Edit Profile' }).click();
 
-    await page.locator('#profilePicture').setInputFiles('D:\\Test\\TestU.jpg');
+    //await page.locator('#profilePicture').setInputFiles('D:\\Test\\TestU.jpg');
+    await page.locator('#profilePicture').setInputFiles('test-data/TestU.jpg');
+
 
     await page.getByRole('button', { name: 'Save Changes' }).click();
     
