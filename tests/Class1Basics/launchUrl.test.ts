@@ -3,10 +3,11 @@ import {test,expect} from '@playwright/test';
 test('launch Ndosi Dev Url',async({page})=>{
     await page.goto('https://ndosisimplifiedautomation.vercel.app/');
 
-    //awaiit expect(page).toHaveURL('https://ndosisimplifiedautomation.vercel.app/');
+    //await expect(page).toHaveURL('https://ndosisimplifiedautomation.vercel.app/');
     //await expect(page).toHaveURL(/ndosisimplifiedautomation/);
     //await expect(page).toHaveTitle('Ndosi Test Automation');
-    await expect(page).toHaveTitle(/Ndosi Test/);
+
+    await expect(page).toHaveTitle(/automation$/i);
    
 });
 
@@ -39,6 +40,6 @@ test('landing page screenshot',async({page})=>{
 
     await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
 
-    await page.screenshot({ path: 'Screenshots/LandingPage.png', fullPage: true });
+    await page.screenshot({ path: 'Screenshots/LandingPageScreenshot.png', fullPage: true });
 
 });

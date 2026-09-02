@@ -82,7 +82,7 @@ test('Login to Ndosi with invalid password', async ({ page }) => {
     const dialog = await dialogPromise;
 
     // Assert alert message
-        expect(dialog.message()).toBe('Invalid credentials. Please try again.');
+    expect(dialog.message()).toBe('Invalid credentials. Please try again.');
 
     // Accept alert
     await dialog.accept();
