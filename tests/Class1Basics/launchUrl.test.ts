@@ -8,13 +8,14 @@ test('launch Ndosi Dev Url',async({page})=>{
     //await expect(page).toHaveTitle('Ndosi Test Automation');
 
     await expect(page).toHaveTitle(/automation$/i);
+
    
 });
 
 
 test('Verify login button',async({page})=>{
 
-    await page.goto('*/');
+    await page.goto('/');
 
     const loginButton = await page.getByRole('button', { name: 'Login' }).isVisible();
     
