@@ -17,3 +17,27 @@ test.describe.serial('Dependent Workflow', () => {
   });
 
 });
+
+
+test.describe('Login Tests', () => {
+
+    test.beforeEach(async ({ page }) => {
+        await page.goto('https://ndosisimplifiedautomation.vercel.app/');
+    });
+
+    test('Valid login', async ({ page }) => {
+        // login test
+        await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    });
+
+    test('Invalid username', async ({ page }) => {
+        // login test
+        await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    });
+
+    test('Invalid password', async ({ page }) => {
+        // login test
+        await expect(page.getByRole('button', { name: 'Login' })).toBeVisible();
+    });
+
+});
