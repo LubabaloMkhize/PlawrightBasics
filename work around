@@ -1,0 +1,26 @@
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+
+testDir: './tests',
+
+use: {
+
+browserName: 'chromium',
+
+channel: 'chrome'
+
+}
+
+});
+
+
+import { test, expect } from '@playwright/test';
+
+test('Google test', async ({ page }) => {
+
+await page.goto('https://www.google.com');
+
+await expect(page).toHaveTitle(/Google/);
+
+});

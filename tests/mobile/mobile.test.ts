@@ -35,3 +35,6 @@ import {test,devices,expect} from '@playwright/test';
 
     await page.waitForTimeout(5000);
   });
+
+  console.log(Object.keys(devices));
+  

@@ -19,9 +19,12 @@ test('Login to ndosi with valid credentials',async({page})=>{
 
     await page.waitForTimeout(5000);
 
-    await expect(page.getByRole('heading', { name: /Welcome back, Sponge 👋/ })).toBeVisible();
-    //await expect(page.locator('text=Welcomeback,Sponge👋')).toBeVisible();
+    //await expect(page.getByRole('heading', { name: 'Welcome back, Sponge 👋' })).toHaveText('Welcomeback,Sponge👋');
+    //await expect(page.locator('text=Welcomeback,Sponge👋')).toBeVisible();;
+    //await expect(page.locator('.user-pill')).toBeDisabled();
 
+    await expect(page.getByRole('heading', { name: 'Welcome back, Sponge 👋' })).toContainText('Welcomeback,Sponge👋');
+    
     
     await page.waitForTimeout(5000);
 
