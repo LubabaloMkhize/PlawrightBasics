@@ -1,6 +1,6 @@
 import {test,devices,expect} from '@playwright/test';
 
-  test.use({...devices['iPhone 14 Pro'],});
+  test.use({...devices['Pixel 7'],});
 
   test('verify mobile web login page heading', async ({ page }) => {
     await page.goto('*/');
@@ -36,5 +36,5 @@ import {test,devices,expect} from '@playwright/test';
     await page.waitForTimeout(5000);
   });
 
-  console.log(Object.keys(devices));
+  console.log(devices);
   

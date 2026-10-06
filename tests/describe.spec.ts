@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 // Declare a serial block to enforce strict sequential execution
 test.describe.serial('Dependent Workflow', () => {
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://ndosisimplifiedautomation.vercel.app/');
+        await page.goto('/');
     });
   test('1. Must run first (e.g., Create Resource)', async ({ page }) => {
    // await page.goto('https://ndosisimplifiedautomation.vercel.app/');
@@ -24,7 +24,7 @@ test.describe.serial('Dependent Workflow', () => {
 test.describe('Login Tests', () => {
 
     test.beforeEach(async ({ page }) => {
-        await page.goto('https://ndosisimplifiedautomation.vercel.app/');
+        await page.goto('/');
     });
 
     test('Valid login', async ({ page }) => {
